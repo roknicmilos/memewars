@@ -47,20 +47,21 @@ Running tests like this is necessary to generate the tests coverage report.
   docker compose run --rm django sh -c 'coverage html'
   ```
 
-This will generate html for the tests coverage report which is useful when trying
-to find out exactly which code is not covered by tests.
-You can simply open the generated `index.html` in your browser and explore all files
-and places in those files which are covered, not covered and ignored by tests coverage.
+This will generate html for the tests coverage report which is useful when 
+trying to find out exactly which code is not covered by tests.
+You can simply open the generated `index.html` in your browser and explore 
+all files and places in those files which are covered, not covered and 
+ignored by tests coverage.
 
-If you don't want the html, and you just want to see the overall coverage report, you
-can run:
+If you don't want the html, and you just want to see the overall coverage 
+report, you can run:
 
   ```bash
   docker compose run --rm django sh -c 'coverage report'
   ```
 
-This will print the coverage report generated the last time tests wer run with the
-coverage ([Run tests with coverage](#run-tests-with-coverage)).
+This will print the coverage report generated the last time tests wer run 
+with the coverage ([Run tests with coverage](#run-tests-with-coverage)).
 
 ### Run linters
 
@@ -139,8 +140,8 @@ with the credentials from `.env` file. If you want to create a new one, run:
   docker compose run --rm django sh -c 'python3 manage.py createsuperuser'
   ```
 
-If the superuser with the credentials from the `.env` file does not exist, you
-can create it by running:
+If the superuser with the credentials from the `.env` file does not exist, 
+you can create it by running:
 
   ```bash
   docker compose run --rm django sh -c 'python3 manage.py createsuperuser --noinput'
@@ -148,8 +149,8 @@ can create it by running:
 
 ### Load fixtures
 
-To load all the fixtures, run the comment below (**NOTE: this will override table
-raws with the same primary keys as those specified in fixtures**):
+To load all the fixtures, run the comment below (**NOTE: this will override 
+table raws with the same primary keys as those specified in fixtures**):
 
   ```bash
   docker compose run --rm django sh -c 'python3 manage.py load_data'
@@ -167,7 +168,8 @@ ___
 
 ## Updating dependencies
 
-Execute the following set of commands to interactively upgrade requirements packages:
+Execute the following set of commands to interactively upgrade requirements 
+packages:
 
   ```bash
   docker compose run --rm django sh -c 'pip install pip-upgrader; 
