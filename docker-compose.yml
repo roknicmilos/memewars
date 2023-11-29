@@ -13,9 +13,7 @@ services:
     depends_on:
       - postgres
     volumes:
-      - ./api/src:/app/src/
-      - ./api/scripts/:/app/scripts/
-      - ./api/requirements:/app/requirements/
+      - ./api/:/app/
 
   postgres:
     container_name: memewars-postgres
@@ -31,13 +29,13 @@ services:
     container_name: memewars-react
     build:
       context: ./app
+      target: development
     env_file:
       - .env
     ports:
       - "3000:3000"
     volumes:
       - ./app/:/app/
-      - ./app/scripts/:/app/scripts/
 
 volumes:
   memewars-postgres-data:
