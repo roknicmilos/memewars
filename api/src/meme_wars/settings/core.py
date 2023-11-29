@@ -4,7 +4,7 @@ from os.path import abspath, basename, dirname, join, normpath
 
 from decouple import Csv, config
 
-from api.src.meme_wars.utils import get_env_url
+from meme_wars.utils import get_env_url
 
 # ##### PATH CONFIGURATION ################################
 
