@@ -1,0 +1,137 @@
+# Skip PK 1 in case superuser is created in an empty DB
+
+- model: users.User
+  pk: 2
+  fields:
+    email: jaime.lannister@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Jaime
+    last_name: Lannister
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 3
+  fields:
+    email: daenerys.targaryen@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Daenerys
+    last_name: Targaryen
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 4
+  fields:
+    email: cersei.lannister@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Cersei
+    last_name: Lannister
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 5
+  fields:
+    email: robb.stark@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Robb
+    last_name: Stark
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 6
+  fields:
+    email: rhaenyra.targaryen@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Rhaenyra
+    last_name: Targaryen
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 7
+  fields:
+    email: daemon.targaryen@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Daemon
+    last_name: Targaryen
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 8
+  fields:
+    email: eddard.stark@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Eddard
+    last_name: Stark
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 9
+  fields:
+    email: harry.potter@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Harry
+    last_name: Potter
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 10
+  fields:
+    email: albus.dumbledore@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Albus
+    last_name: Dumbledore
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 11
+  fields:
+    email: hermione.granger@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Hermione
+    last_name: Granger
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 12
+  fields:
+    email: ron.weasley@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Ron
+    last_name: Weasley
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 13
+  fields:
+    email: draco.malfoy@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Draco
+    last_name: Malfoy
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 14
+  fields:
+    email: severus.snape@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Severus
+    last_name: Snape
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 15
+  fields:
+    email: tom.riddle@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Tom
+    last_name: Riddle
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00
+- model: users.User
+  pk: 16
+  fields:
+    email: jon.show@memewars.com
+    password: pbkdf2_sha256$260000$2IjFBdqCkWpi0Hs7la0UFG$UOGWoe6P41gCTfCmmbWoS/slytH+vpy3pf6wguCR/d0= # raw: pass4user
+    first_name: Jon
+    last_name: Snow
+    created: 2023-01-05T00:00:00+00:00
+    modified: 2023-01-05T00:00:00+00:00

@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+
+  django:
+    container_name: memewars-django
+    build:
+      context: ./api
+    env_file:
+      - .env
+    ports:
+      - "${API_PORT}:8000"
+    depends_on:
+      - postgres
+    volumes:
+      - ./api/src:/app/src/
+      - ./api/scripts/:/app/scripts/
+      - ./api/requirements:/app/requirements/
+
+  postgres:
+    container_name: memewars-postgres
+    image: postgres:15
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - memewars-postgres-data:/var/lib/postgresql/data
+
+  react:
+    container_name: memewars-react
+    build:
+      context: ./app
+    env_file:
+      - .env
+    ports:
+      - "${APP_PORT}:3000"
+    volumes:
+      - ./app/:/app/
+      - ./app/scripts/:/app/scripts/
+
+volumes:
+  memewars-postgres-data:

@@ -62,7 +62,7 @@ file when creating a new commit in order to run all tests and checks that
 keeps the code clean, readable, testable, extensible, maintainable, secure,
 usable, etc.
 
-1. Copy `scripts/pre-commit` file into `.git/hooks/` directory
+1. Copy `pre-commit` file into `.git/hooks/` directory
 2. Make it executable with `chmod +x .git/hooks/pre-commit`
 
 Now, if you try to commit new changes (with `git commit ...` command), the

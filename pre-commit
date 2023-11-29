@@ -1,0 +1,38 @@
+#!/bin/sh
+
+PROJECT_ROOT=$(git rev-parse --show-toplevel)
+. "$PROJECT_ROOT/scripts/container/utils.sh"
+
+printc() {
+  if [ "$2" = "info" ]; then
+    COLOR="96m" # light blue
+  elif [ "$2" = "success" ]; then
+    COLOR="92m" # green
+  elif [ "$2" = "danger" ]; then
+    COLOR="91m" # red
+  else
+    COLOR="0m" # no (default) color
+  fi
+
+  START_COLOR="\e[$COLOR"
+  END_COLOR="\e[0m"
+  printf "$START_COLOR%b$END_COLOR" "$1"
+}
+
+printc "\n>>>>>>>>>>>>>>>> RUNNNING PRE-COMMIT HOOK <<<<<<<<<<<<<<<<\n\n" "info"
+
+run_checks() {
+  docker compose run --rm -T django sh /app/scripts/entrypoint.sh check
+}
+
+print_success_msg() {
+  printc "All checks have passed. Commiting...\n" "success"
+}
+
+print_failure_msg_and_exit() {
+  printc "Unable to create a new commit because some checks have failed.\n" "danger"
+  printc "Please check the above output to fix the issues and than try to create a new commit.\n" "danger"
+  exit 1
+}
+
+run_checks && print_success_msg || print_failure_msg_and_exit
