@@ -7,7 +7,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install
 
 ##############################
 ###### Production image ######
@@ -15,6 +14,7 @@ RUN npm install
 
 FROM base AS production
 
+RUN npm install
 RUN npm install -g serve
 RUN npm run build
 
