@@ -9,13 +9,10 @@ services:
     env_file:
       - .env
     ports:
-      - "8000:8000"
+      - "8000:8001"
     depends_on:
       - postgres
-    volumes:
-      - ./api/src:/app/src/
-      - ./api/scripts/:/app/scripts/
-      - ./api/requirements:/app/requirements/
+    restart: unless-stopped
 
   postgres:
     container_name: memewars-postgres
@@ -26,6 +23,7 @@ services:
       - POSTGRES_DB=${DB_NAME}
     volumes:
       - memewars-postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
 
   react:
     container_name: memewars-react
@@ -34,10 +32,8 @@ services:
     env_file:
       - .env
     ports:
-      - "3000:3000"
-    volumes:
-      - ./app/:/app/
-      - ./app/scripts/:/app/scripts/
+      - "3000:3001"
+    restart: unless-stopped
 
 volumes:
   memewars-postgres-data:
