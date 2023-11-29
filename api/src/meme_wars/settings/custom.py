@@ -19,5 +19,5 @@ GOOGLE_OPENID_CONFIG_URL = "https://accounts.google.com/.well-known/openid-confi
 GOOGLE_OPENID_CLIENT_ID = config("GOOGLE_OPENID_CLIENT_ID")
 GOOGLE_OPENID_CLIENT_SECRET = config("GOOGLE_OPENID_CLIENT_SECRET")
 
-HOST_URL = get_env_url(env_var="BASE_URL")
+HOST_URL = get_env_url(env_var="API_BASE_URL")
 CLIENT_APP_URL = get_env_url(env_var="APP_BASE_URL")

@@ -4,6 +4,8 @@ from os.path import abspath, basename, dirname, join, normpath
 
 from decouple import Csv, config
 
+from api.src.meme_wars.utils import get_env_url
+
 # ##### PATH CONFIGURATION ################################
 
 # fetch Django's project directory
@@ -162,4 +164,6 @@ ALLOWED_HOSTS = ["*"]
 
 LOGIN_REDIRECT_URL = "/"
 
-CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", default=None, cast=Csv())
+CSRF_TRUSTED_ORIGINS = [
+    get_env_url(env_var="API_BASE_URL"),
+]
