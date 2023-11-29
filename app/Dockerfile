@@ -1,12 +1,29 @@
-FROM node:20
-
-COPY ./package.json     /app/package.json
-COPY ./scripts/         /app/scripts
-COPY ./public           /app/public
-COPY ./src              /app/src
+########################
+###### Base image ######
+########################
+FROM node:20 as base
 
 WORKDIR /app
 
+COPY . .
+
 RUN npm install
 
-CMD ["sh", "/app/scripts/entrypoint.sh"]
+##############################
+###### Production image ######
+##############################
+
+FROM base AS production
+
+RUN npm install -g serve
+RUN npm run build
+
+CMD ["sh", "/app/scripts/entrypoint.sh", "prod"]
+
+################################
+####### Development image ######
+################################
+
+FROM base AS development
+
+CMD ["sh", "/app/scripts/entrypoint.sh", "dev"]

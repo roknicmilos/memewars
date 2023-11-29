@@ -7,13 +7,16 @@ set -e
 export REACT_APP_APP_URL=$APP_BASE_URL
 export REACT_APP_API_URL="$API_BASE_URL/api"
 
-npm install
-
-if bool "$APP_DEV_SERVER"; then
-  printc "Starting development server...\n" "info"
+if [ "$1" = "dev" ]; then
+  printc "Starting DEVELOPMENT server...\n" "info"
   npm start
-else
-  printc "Building production ready files and starting production server...\n" "info"
-  npm run build
+
+elif [ "$1" = "prod" ]; then
+  printc "Starting PRODUCTION server...\n" "info"
   serve -s build
+
+else
+  printc "Unknown command: '$1'\n" "danger"
+  printc "Exiting!\n" "danger"
+  exit 1
 fi
