@@ -1,0 +1,62 @@
+{
+    "pr_template": "- #{{TITLE}} ##{{NUMBER}}",
+    "template": "#{{CHANGELOG}}\n## Extra information\n- Full Changelog: #{{RELEASE_DIFF}}\n- Days since last release: #{{DAYS_SINCE}}",
+    "ignore_labels": [],
+    "sort": {
+        "order": "ASC",
+        "on_property": "mergedAt"
+    },
+    "categories": [
+        {
+            "title": "## ⚠️ Breaking changes",
+            "labels": ["breaking changes"]
+        },
+        {
+            "title": "## ✨ Features",
+            "labels": ["feature"]
+        },
+        {
+            "title": "## 🛠 Improvements",
+            "labels": ["improvement"]
+        },
+        {
+            "title": "## 🐛 Bug Fixes",
+            "labels": ["bug"]
+        },
+        {
+            "title": "## 💬 Other",
+            "labels": ["other"]
+        },
+        {
+            "title": "## 📦 Dependencies",
+            "labels": ["dependencies"]
+        },
+        {
+            "title": "## 📖 Documentation",
+            "labels": ["documentation"]
+        },
+        {
+            "title": "## 🌐 Translations",
+            "labels": ["translations"]
+        },
+        {
+            "title": "## ❓ Uncategorized",
+            "exclude_labels": [
+                "breaking changes",
+                "feature",
+                "improvement",
+                "bug",
+                "other",
+                "dependencies",
+                "documentation",
+                "translations"
+            ],
+            "rules": [
+              {
+                "pattern": "",
+                "on_property": "labels"
+              }
+            ]
+          }
+    ]
+}
