@@ -5,6 +5,7 @@ import styles from "./wars.module.scss";
 import { War } from "@/api/models/War";
 import { WarCard } from "@/components/war-card/WarCard";
 import { Navigation } from "@/components/navigation/Navigation";
+import { WarService } from "@/api/services/WarService";
 
 
 export default function Wars() {
@@ -14,11 +15,17 @@ export default function Wars() {
 
   useEffect(() => {
     if (isLoading) {
-      // TODO: fetch and set wars
-    } else if (wars.length < 3) {
-      setContainerStyle({ justifyContent: "center" });
+      fetchWars().then(() => setIsLoading(false));
     }
   }, [ isLoading, wars ]);
+
+  const fetchWars = async () => {
+    const wars = await WarService.getWars();
+    setWars(wars);
+    if (wars.length < 3) {
+      setContainerStyle({ justifyContent: "center" });
+    }
+  };
 
   return (
     <>

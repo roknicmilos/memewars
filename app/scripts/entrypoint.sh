@@ -4,8 +4,7 @@ set -e
 
 . /app/scripts/utils.sh
 
-export REACT_APP_APP_URL=$APP_BASE_URL
-export REACT_APP_API_URL="$API_BASE_URL/api"
+export NEXT_PUBLIC_API_URL="$API_BASE_URL/api"
 
 if [ "$1" = "dev" ]; then
   printc "Installing packages...\n" "info"
