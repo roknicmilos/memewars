@@ -1,0 +1,57 @@
+@import "@/style/base.module";
+
+.title {
+  margin: 50px 0;
+  font-weight: 400;
+  @include respond-to(mobile) {
+    text-align: center;
+  }
+}
+
+.buttons {
+  width: fit-content;
+  max-width: 400px;
+  @include respond-to(mobile) {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.darkGoogleIcon, .whiteGoogleIcon {
+  margin: 15px 7px 15px 15px;
+}
+
+.whiteGoogleIcon {
+  display: none;
+}
+
+.button:hover .darkGoogleIcon {
+  display: none;
+}
+
+.button:hover .whiteGoogleIcon {
+  display: block;
+}
+
+.buttonLabel {
+  margin: 15px 15px 15px 7px;
+  font-size: 20px;
+  color: $primary-color;
+}
+
+.button:hover .buttonLabel {
+  color: white;
+}
+
+.button:focus .buttonLabel {
+  color: $primary-color;
+}

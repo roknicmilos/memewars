@@ -7,7 +7,6 @@ WORKDIR /app
 
 COPY . .
 
-
 ##############################
 ###### Production image ######
 ##############################
@@ -15,7 +14,6 @@ COPY . .
 FROM base AS production
 
 RUN npm install
-RUN npm install -g serve
 RUN npm run build
 
 CMD ["sh", "/app/scripts/entrypoint.sh", "prod"]
