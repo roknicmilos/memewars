@@ -1,0 +1,22 @@
+@import "@/style/base.module";
+
+.avatarButton {
+  height: 80px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modalText {
+  max-width: 500px;
+  margin: 0 0 20px;
+}
+
+.modalText p {
+  font-size: 22px;
+  font-weight: 300;
+  margin: 7px;
+  text-align: center;
+}

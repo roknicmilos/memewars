@@ -10,10 +10,12 @@ export const metadata: Metadata = {
   description: "A place where you'll discover that you can't take a joke",
 };
 
-export default function RootLayout({ children, }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-    <body className={ inter.className }>{ children }</body>
+    <body className={ inter.className }>
+    { children }
+    </body>
     </html>
   );
 }
