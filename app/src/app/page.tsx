@@ -1,13 +1,17 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { Navigation } from "@/components/navigation/Navigation";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <Navigation/>
       <p>
         TODO: WILL TAKE YOU TO THE WAR PAGE FOR AUTHENTICATED USERS ONLY OR LOGIN PAGE FOR ANONYMOUS USERS ONLY
       </p>
       <Link href="login">Login</Link>
-    </main>
+    </>
   );
 }
