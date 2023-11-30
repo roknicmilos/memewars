@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./wars.module.scss";
 import { War } from "@/api/models/War";
-import { WarCard } from "@/app/wars/war-card/WarCard";
+import { WarCard } from "@/components/war-card/WarCard";
 import { Navigation } from "@/components/navigation/Navigation";
 
 
