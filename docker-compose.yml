@@ -25,8 +25,8 @@ services:
     volumes:
       - memewars-postgres-data:/var/lib/postgresql/data
 
-  react:
-    container_name: memewars-react
+  nextjs:
+    container_name: memewars-nextjs
     build:
       context: ./app
       target: development

@@ -11,11 +11,11 @@ if [ "$1" = "dev" ]; then
   printc "Installing packages...\n" "info"
   npm install
   printc "Starting DEVELOPMENT server...\n" "info"
-  npm start
+  npm run dev
 
 elif [ "$1" = "prod" ]; then
   printc "Starting PRODUCTION server...\n" "info"
-  serve -s build
+  npm start
 
 else
   printc "Unknown command: '$1'\n" "danger"
