@@ -11,7 +11,11 @@ export default function Home() {
       <p>
         TODO: WILL TAKE YOU TO THE WAR PAGE FOR AUTHENTICATED USERS ONLY OR LOGIN PAGE FOR ANONYMOUS USERS ONLY
       </p>
+      <Link href="">Home</Link>
+      <br/>
       <Link href="login">Login</Link>
+      <br/>
+      <Link href="wars">Wars</Link>
     </>
   );
 }
