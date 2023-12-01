@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { War } from "@/api/models/War";
 
+
 interface WarCardProps {
   war: War;
 }

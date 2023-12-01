@@ -3,6 +3,7 @@ import styles from "./user-menu.module.scss";
 import { Modal } from "@/components/modal/Modal";
 import Image from "next/image";
 
+
 export function UserMenu() {
   const [ isOpened, setIsOpened ] = useState<boolean>(false);
 
