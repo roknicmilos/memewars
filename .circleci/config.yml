@@ -15,9 +15,6 @@ jobs:
           name: Prepare Environment variables
           command: cp example.env .env
       - run:
-          name: Start Docker
-          command: sudo systemctl start docker
-      - run:
           name: Run Tests
           command: docker compose run --rm django sh /app/scripts/entrypoint.sh test
 
