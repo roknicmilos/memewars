@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  test:
+  test-django:
     docker:
       - image: cimg/base:2023.12
     steps:
@@ -19,13 +19,19 @@ jobs:
           command: docker compose -f docker-compose.circleci.yml build --no-cache
       - run:
           name: Run Tests
-          command: | 
+          command: |
             docker compose -f docker-compose.circleci.yml run --rm django sh /app/scripts/entrypoint.sh test
       - run:
           name: Cleanup Docker Data
           command: docker system prune -a -f
+  test-nextjs:
+    docker:
+      - image: cimg/node:21.2.0
+    steps:
+      - checkout
+      - run: node --version
 
 workflows:
   test-workflow:
     jobs:
-      - test
+      - test-django
