@@ -2,7 +2,7 @@
 import sys
 from os.path import abspath, basename, dirname, join, normpath
 
-from decouple import Csv, config
+from decouple import config
 
 from meme_wars.utils import get_env_url
 

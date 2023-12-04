@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+
+  django:
+    container_name: memewars-django
+    build:
+      context: ./api
+    env_file:
+      - .env
+    command: chown +x /app/scripts/entrypoint.sh
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: memewars-postgres
+    image: postgres:15
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_DB=${DB_NAME}
+    restart: unless-stopped
