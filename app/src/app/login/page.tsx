@@ -3,6 +3,8 @@
 import styles from "./page.module.scss";
 import Image from "next/image";
 import { Navigation } from "@/components/navigation/Navigation";
+import { AuthService } from "@/api/services/AuthService";
+
 
 export default function Login() {
   return (
@@ -12,7 +14,10 @@ export default function Login() {
         <>
           <h1 className={ styles.title }>Welcome to the Meme Wars</h1>
           <div className={ styles.buttons }>
-            <div className={ styles.button } onClick={ () => alert("TODO: login with google") }>
+            <div
+              className={ styles.button }
+              onClick={ () => window.location.href = AuthService.getLoginURL() }
+            >
               <Image
                 className={ styles.darkGoogleIcon }
                 width={ 30 }

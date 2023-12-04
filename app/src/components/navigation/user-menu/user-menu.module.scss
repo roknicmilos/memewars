@@ -9,6 +9,11 @@
   cursor: pointer;
 }
 
+.avatarButtonImage {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .modalText {
   max-width: 500px;
   margin: 0 0 20px;

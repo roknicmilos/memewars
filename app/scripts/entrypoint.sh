@@ -5,6 +5,7 @@ set -e
 . /app/scripts/utils.sh
 
 export NEXT_PUBLIC_API_URL="$API_BASE_URL/api"
+export NEXT_PUBLIC_APP_URL=$APP_BASE_URL
 
 if [ "$1" = "dev" ]; then
   printc "Installing packages...\n" "info"
