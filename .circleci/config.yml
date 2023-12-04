@@ -7,8 +7,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Testing
-          command: pwd; ls -la; python --version; docker --version
+          name: Prepare Environment variables
+          command: cp example.env .env
+      - run:
+          name: Run Tests
+          command: docker compose run --rm django sh /app/scripts/entrypoint.sh test
 
 workflows:
   test-workflow:
