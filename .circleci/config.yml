@@ -8,7 +8,7 @@ jobs:
 
     docker:
       # Use custom Dockerfile in api directory
-      - image: ./api/Dockerfile
+      - image: ./../api/Dockerfile
 
     steps:
       - checkout
