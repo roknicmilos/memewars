@@ -15,8 +15,11 @@ jobs:
           name: Prepare Environment variables
           command: cp example.env .env
       - run:
-          name: Checking Git Status
-          command: git status
+          name: "Checking Docker data (TODO: REMOVE)"
+          command: docker image ls; docker volume ls; docker network ls; docker container ls
+      - run:
+          name: Building Docker Images
+          command: docker compose -f docker-compose.circleci.yml build --no-cache
       - run:
           name: Run Tests
           command: | 
