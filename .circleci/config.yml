@@ -2,17 +2,13 @@ version: 2.1
 
 jobs:
   test:
-    branches:
-      only: /.*/
-
     docker:
       - image: cimg/python
-
     steps:
       - checkout
       - run:
           name: Testing
-          command: pwd; ls -la
+          command: pwd
 
 workflows:
   test-workflow:
