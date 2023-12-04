@@ -1,0 +1,31 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/base:2023.12
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Prepare Environment variables
+          command: cp example.env .env
+      - run:
+          name: Prepare Environment variables
+          command: cp example.env .env
+      - run:
+          name: Building Docker Images
+          command: docker compose -f docker-compose.circleci.yml build --no-cache
+      - run:
+          name: Run Tests
+          command: | 
+            docker compose -f docker-compose.circleci.yml run --rm django sh /app/scripts/entrypoint.sh test
+      - run:
+          name: Cleanup Docker Data
+          command: docker system prune -a -f
+
+workflows:
+  test-workflow:
+    jobs:
+      - test
