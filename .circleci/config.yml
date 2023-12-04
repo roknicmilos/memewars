@@ -15,6 +15,9 @@ jobs:
           name: Prepare Environment variables
           command: cp example.env .env
       - run:
+          name: Checking Git Status
+          command: git status
+      - run:
           name: Run Tests
           command: | 
             docker compose -f docker-compose.circleci.yml run --rm django sh /app/scripts/entrypoint.sh test
