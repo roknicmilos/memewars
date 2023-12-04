@@ -2,13 +2,11 @@ version: 2.1
 
 jobs:
   test:
-    # Run tests on all branches
     branches:
       only: /.*/
 
     docker:
-      # Use custom Dockerfile in api directory
-      - image: ./../api/Dockerfile
+      - image: cimg/python
 
     steps:
       - checkout
