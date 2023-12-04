@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: ./api/Dockerfile
+      - image: alpine
     steps:
       - checkout
       - run:
