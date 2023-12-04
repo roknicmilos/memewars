@@ -6,6 +6,8 @@ jobs:
       - image: cimg/base:2023.12
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
       - run:
           name: Prepare Environment variables
           command: cp example.env .env
