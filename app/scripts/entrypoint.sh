@@ -17,6 +17,14 @@ elif [ "$1" = "prod" ]; then
   printc "Starting PRODUCTION server...\n" "info"
   npm start
 
+elif [ "$1" = "test" ]; then
+  printc "Installing packages...\n" "info"
+  npm install
+  printc "Checking for linting issues...\n" "info"
+  npm run lint
+  printc "Running tests...\n" "info"
+  # TODO: add command
+
 else
   printc "Unknown command: '$1'\n" "danger"
   printc "Exiting!\n" "danger"

@@ -6,6 +6,7 @@ FROM node:20 as base
 WORKDIR /app
 
 COPY . .
+RUN chmod +x /app/scripts/
 
 ##############################
 ###### Production image ######

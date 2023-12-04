@@ -1,7 +1,8 @@
 version: 2.1
 
 jobs:
-  test-django:
+
+  test:
     docker:
       - image: cimg/base:2023.12
     steps:
@@ -12,26 +13,21 @@ jobs:
           name: Prepare Environment variables
           command: cp example.env .env
       - run:
-          name: Prepare Environment variables
-          command: cp example.env .env
-      - run:
           name: Building Docker Images
           command: docker compose -f docker-compose.circleci.yml build --no-cache
       - run:
-          name: Run Tests
+          name: Test Django Project
           command: |
             docker compose -f docker-compose.circleci.yml run --rm django sh /app/scripts/entrypoint.sh test
       - run:
+          name: Test Next.js Project
+          command: |
+            docker compose -f docker-compose.circleci.yml run --rm nextjs sh /app/scripts/entrypoint.sh test
+      - run:
           name: Cleanup Docker Data
           command: docker system prune -a -f
-  test-nextjs:
-    docker:
-      - image: cimg/node:21.2.0
-    steps:
-      - checkout
-      - run: node --version
 
 workflows:
   test-workflow:
     jobs:
-      - test-django
+      - test
