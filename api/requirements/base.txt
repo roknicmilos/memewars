@@ -20,7 +20,7 @@ pip==23.3.2
 pipdeptree==2.13.1
 psycopg2==2.9.9
 pytest-cov==4.1.0
-pytest-django==4.7.0
+pytest-django==4.8.0
 pytest-xdist==3.5.0
 pytest==8.1.1
 python-decouple==3.8
